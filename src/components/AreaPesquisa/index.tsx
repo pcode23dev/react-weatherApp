@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { StyledArea } from "./style";
 import img from "../../assets/icons/Type=spinner-gap-regular.svg"
 import axios from "axios";
+import { keyApi } from "../../../security";
 
 
 export function AreaPesquisa() {
@@ -10,7 +11,7 @@ export function AreaPesquisa() {
     const inputRef = useRef<HTMLInputElement>(null);
 
     async function pesquisar() {
-        const key = "0e57b54fd7e435f3c84d049400a57e4c";
+        const key = keyApi;
         const cidade = inputRef.current?.value || "Luanda";
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${key}&lang=pt_br&units=metric`;
         
