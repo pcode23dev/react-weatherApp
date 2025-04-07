@@ -6,7 +6,7 @@ import axios from "axios";
 
 
 export function AreaPesquisa() {
-    const [useClima, setClima] = useState({});
+    const [useClima, setClima] = useState({})
     const inputRef = useRef<HTMLInputElement>(null);
 
     async function pesquisar() {
@@ -18,7 +18,6 @@ export function AreaPesquisa() {
         const responseApi = await axios.get(url);
 
         console.log(responseApi.data);
-        
     }
 
     return (
